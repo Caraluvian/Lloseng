@@ -131,7 +131,7 @@ public class ChatClient extends AbstractClient
         if(message.subSequence(0,8).equals("#setport")){
           if(!isConnected()){
             setPort(Integer.parseInt(message.substring(9)));
-            clientUI.display("The port number is set");
+            clientUI.display("Port set to: " + message.substring(9));
           }
           else{
             clientUI.display("The client is not logged off! Cannnot set a new port number.");
@@ -141,7 +141,7 @@ public class ChatClient extends AbstractClient
         else if(message.subSequence(0,8).equals("#sethost")){
           if(!isConnected()){
             setHost(message.substring(9));
-            clientUI.display("The host number is set");
+            clientUI.display("Host set to: " + message.substring(9));
           }
           else{
             clientUI.display("The client is not logged off! Cannnot set a new host number.");
